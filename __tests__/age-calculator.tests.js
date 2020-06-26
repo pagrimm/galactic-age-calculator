@@ -50,9 +50,16 @@ describe('Galactic Age Calculator', () => {
     expect(user2.getPlanetYearsLeft()).toEqual([-41, -17, -6, -1]);
   });
 
-  test('should correctly return last birthday of user', () => {
+  test('should correctly return last birthday of user if birthday in this year has passed', () => {
     expect(user.lastBirthday.getDate()).toEqual(11);
     expect(user.lastBirthday.getFullYear()).toEqual(2020);
     expect(user.lastBirthday.getMonth()).toEqual(3);
+  });
+
+  test('should correctly return last birthday of user if birthday in this year has not passed', () => {
+    let user2 = new User("Steve", 1992, 10, 14, 78, today);
+    expect(user2.lastBirthday.getDate()).toEqual(14);
+    expect(user2.lastBirthday.getFullYear()).toEqual(2019);
+    expect(user2.lastBirthday.getMonth()).toEqual(10);
   });
 });

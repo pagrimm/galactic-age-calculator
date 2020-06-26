@@ -22,7 +22,15 @@ export class User {
     return yearsArray;
   }
   getLastBirthday(today = new Date()) {
-    return new Date()
+    let thisYearBirthday = new Date(today.getFullYear(), this.birthday.getMonth(), this.birthday.getDate())
+    let lastBirthday;
+    if (thisYearBirthday.getTime() < today.getTime()) {
+      lastBirthday = thisYearBirthday;
+    } else {
+      lastBirthday = thisYearBirthday;
+      lastBirthday.setFullYear(lastBirthday.getFullYear() - 1);
+    }
+    return lastBirthday;
   }
   getMercuryAge(days = this.daysAlive) {
     let mercury = new Planet(88);
