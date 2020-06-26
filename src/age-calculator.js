@@ -5,7 +5,7 @@ export class User {
     this.lifeExpectancy = expectancy;
     this.daysAlive = this.getDaysAlive(today);
     this.daysLeft = this.getDaysLeft();
-    this.nextBirthday = this.getNextBirthday(today);
+    this.lastBirthday = this.getLastBirthday(today);
   }
   getDaysAlive(today = new Date()) {
     return (msToDays(today.getTime()) - msToDays(this.birthday.getTime()));
@@ -21,16 +21,8 @@ export class User {
     yearsArray.push(this.getJupiterAge(this.daysLeft));
     return yearsArray;
   }
-  getNextBirthday(today = new Date()) {
-    let nextBirthday = new Date();
-    let thisYearBirthday = new Date(today.getFullYear(), this.birthday.getMonth(), this.birthday.getDate())
-    if (thisYearBirthday.getTime() > today.getTime()) {
-      nextBirthday = thisYearBirthday;
-    } else {
-      nextBirthday = thisYearBirthday;
-      nextBirthday.setMonth(nextBirthday.getMonth() + 12); 
-    }
-    return nextBirthday;
+  getLastBirthday(today = new Date()) {
+    return new Date()
   }
   getMercuryAge(days = this.daysAlive) {
     let mercury = new Planet(88);

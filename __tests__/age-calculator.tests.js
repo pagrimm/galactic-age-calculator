@@ -50,9 +50,9 @@ describe('Galactic Age Calculator', () => {
     expect(user2.getPlanetYearsLeft()).toEqual([-41, -17, -6, -1]);
   });
 
-  test('should correctly return next birthday of user', () => {
-    expect(user.nextBirthday.getDate()).toEqual(11);
-    expect(user.nextBirthday.getFullYear()).toEqual(2021);
-    expect(user.nextBirthday.getMonth()).toEqual(3);
+  test('should correctly return last birthday of user', () => {
+    expect(user.lastBirthday.getDate()).toEqual(11);
+    expect(user.lastBirthday.getFullYear()).toEqual(2020);
+    expect(user.lastBirthday.getMonth()).toEqual(3);
   });
 });
