@@ -3,6 +3,7 @@ export class User {
     this.name = name;
     this.birthday = new Date(year, month, day);
     this.lifeExpectancy = expectancy;
+    this.daysAlive = this.getDaysAlive();
   }
   getDaysAlive() {
     let today = new Date();
@@ -10,10 +11,11 @@ export class User {
   }
   getMercuryAge() {
     let mercury = new Planet(88)
-    return mercury.getPlanetAge(this.getDaysAlive());
+    return mercury.getPlanetAge(this.daysAlive);
   }
   getVenusAge() {
-    return false;
+    let venus = new Planet(225)
+    return venus.getPlanetAge(this.daysAlive);
   }
 }
 
