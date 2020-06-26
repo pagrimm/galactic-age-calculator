@@ -27,7 +27,8 @@ export class User {
     if (thisYearBirthday.getTime() > today.getTime()) {
       nextBirthday = thisYearBirthday;
     } else {
-      nextBirthday.setTime(thisYearBirthday.getTime() + 3.15576e10); 
+      nextBirthday = thisYearBirthday;
+      nextBirthday.setMonth(nextBirthday.getMonth() + 12); 
     }
     return nextBirthday;
   }
@@ -59,5 +60,5 @@ export class Planet {
 }
 
 function msToDays(ms) {
-  return Math.floor(ms / 8.64e7);
+  return Math.floor(ms / (1000 * 60 * 60 * 24));
 }
