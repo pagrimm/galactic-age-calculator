@@ -4,4 +4,8 @@ export class User {
     this.birthday = new Date(year, month, day);
     this.lifeExpectancy = expectancy;
   }
+
+  getDaysAlive() {
+    return false;
+  }
 }
