@@ -1,16 +1,38 @@
-# Project Name
-**for Epicodus**
-**By Peter Grimm, 05.29.2020**
+# Galactic Age Calculator
+**Weekly Project for Epicodus**  
+**By Peter Grimm**  
+**05.29.2020**
 
 ## Description
 
-Insert description here
+Week 5 project for Epicodus. A program that calculate's a user's age in various planetary years. Designed to showcase my learning and skill with concepts including test-driven development with Jest, red green refactor workflow, npm and Webpack, and ES6 features like classes and template literals.
+
+## Specifications
+Creates a user object with user input name, birthday, life expectancy.
+Calculates the number of days user has lived
+Returns user age in Mercury years
+Returns user age in Venus years
+Returns user age in Mars years
+Returns user age in Jupiter years
+Calculates number of days user has left to live based on input life expectancy
+If user is under average life expectancy, returns how many years user has left to live in Mercury years
+If user is over average life expectancy, returns how many years user has lived past the life expectancy in Mercury years
+If user is under average life expectancy, returns how many years user has left to live in Venus years
+If user is over average life expectancy, returns how many years user has lived past the life expectancy in Venus years
+If user is under average life expectancy, returns how many years user has left to live in Mercury years
+If user is over average life expectancy, returns how many years user has lived past the life expectancy in Mercury years
+If user is under average life expectancy, returns how many years user has left to live in Mars years
+If user is over average life expectancy, returns how many years user has lived past the life expectancy in Mars years
+If user is under average life expectancy, returns how many years user has left to live in Jupiter years
+If user is over average life expectancy, returns how many years user has lived past the life expectancy in Jupiter years
+
 
 ## Setup/Installation Requirements
 
-* Clone this repository 
-* Browse to the ` ` folder
-* Open `index.html` in a browser of your choice
+* Clone this repository using `git clone `
+* Navigate to the `galactic-age-calculator` folder
+* Run `npm install` to install dependencies
+* Run `npm run start` to spin up a web server to view the site
 
 ## Technologies Used
 
