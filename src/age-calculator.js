@@ -4,6 +4,7 @@ export class User {
     this.birthday = new Date(year, month, day);
     this.lifeExpectancy = expectancy;
     this.daysAlive = this.getDaysAlive();
+    this.daysLeft = this.getDaysLeft();
   }
   getDaysAlive() {
     let today = new Date();
@@ -12,24 +13,29 @@ export class User {
   getDaysLeft() {
     return Math.floor(this.lifeExpectancy * 365.2422) - this.daysAlive;
   }
-  getMercuryAge() {
+  getMercuryAge(days = this.daysAlive) {
     let mercury = new Planet(88)
-    return mercury.getPlanetAge(this.daysAlive);
+    return mercury.getPlanetAge(days);
   }
-  getVenusAge() {
+  getVenusAge(days = this.daysAlive) {
     let venus = new Planet(225)
-    return venus.getPlanetAge(this.daysAlive);
+    return venus.getPlanetAge(days);
   }
-  getMarsAge() {
+  getMarsAge(days = this.daysAlive) {
     let mars = new Planet(687)
-    return mars.getPlanetAge(this.daysAlive);
+    return mars.getPlanetAge(days);
   }
-  getJupiterAge() {
+  getJupiterAge(days = this.daysAlive) {
     let jupiter = new Planet(4332)
-    return jupiter.getPlanetAge(this.daysAlive);
+    return jupiter.getPlanetAge(days);
   }
   getPlanetYearsLeft() {
-    return false;
+    let yearsArray = [];
+    yearsArray.push(this.getMercuryAge(this.daysLeft));
+    yearsArray.push(this.getVenusAge(this.daysLeft));
+    yearsArray.push(this.getMarsAge(this.daysLeft));
+    yearsArray.push(this.getJupiterAge(this.daysLeft));
+    return yearsArray;
   }
 }
 
