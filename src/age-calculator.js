@@ -22,8 +22,8 @@ export class User {
     return mars.getPlanetAge(this.daysAlive);
   }
   getJupiterAge() {
-    //let Jupiter = new Planet(4332)
-    return false;
+    let jupiter = new Planet(4332)
+    return jupiter.getPlanetAge(this.daysAlive);
   }
 }
 
