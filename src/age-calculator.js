@@ -7,25 +7,25 @@ export class User {
     this.daysLeft = this.getDaysLeft();
   }
   getDaysAlive(today = new Date()) {
-    return (msToDays(today.getTime()) - msToDays(this.birthday.getTime()))
+    return (msToDays(today.getTime()) - msToDays(this.birthday.getTime()));
   }
   getDaysLeft() {
     return Math.floor(this.lifeExpectancy * 365.2422) - this.daysAlive;
   }
   getMercuryAge(days = this.daysAlive) {
-    let mercury = new Planet(88)
+    let mercury = new Planet(88);
     return mercury.getPlanetAge(days);
   }
   getVenusAge(days = this.daysAlive) {
-    let venus = new Planet(225)
+    let venus = new Planet(225);
     return venus.getPlanetAge(days);
   }
   getMarsAge(days = this.daysAlive) {
-    let mars = new Planet(687)
+    let mars = new Planet(687);
     return mars.getPlanetAge(days);
   }
   getJupiterAge(days = this.daysAlive) {
-    let jupiter = new Planet(4332)
+    let jupiter = new Planet(4332);
     return jupiter.getPlanetAge(days);
   }
   getPlanetYearsLeft() {
@@ -48,5 +48,5 @@ export class Planet {
 }
 
 function msToDays(ms) {
-  return Math.floor(ms / 8.64e7)
+  return Math.floor(ms / 8.64e7);
 }

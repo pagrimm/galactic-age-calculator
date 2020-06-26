@@ -6,15 +6,20 @@
   <title>Galactic Age Calculator</title>
 </head>
 <body class="container">
-  <header class="jumbotron">
+  <header class="jumbotron text-danger">
     <h1>Galactic Age Calculator</h1>
   </header>
   <section class="input card text-white bg-primary border-danger mb-3">
     <div class="card-header text-danger">Calculator</div>
     <div class="card-body">
-      <p class="card-text">Input your birthday:</p>
+      
       <form>
-        <input id="date-input" class="form-control" type="date">
+        <p class="card-text">Input your name:</p>
+        <input id="name-input" class="form-control" type="text" required>
+        <p class="card-text">Input your birthday:</p>
+        <input id="date-input" class="form-control" type="date" required>
+        <p class="card-text">Input your average life expectancy:</p>
+        <input id="expectancy-input" class="form-control" type="number" required>
         <button id="form-submit" type="submit" class="btn btn-warning">Submit</button>
       </form>
     </div>
@@ -22,7 +27,7 @@
   <section class="output card text-white bg-primary border-warning mb-3">
     <div class="card-header text-warning">Output</div>
     <div class="card-body">
-      <p class="card-text">Your results:</p>
+      <p id="name-output" class="card-text"></p>
       <div id="output"></div>
     </div>
   </section>
