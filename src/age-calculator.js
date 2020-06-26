@@ -17,6 +17,9 @@ export class User {
     let venus = new Planet(225)
     return venus.getPlanetAge(this.daysAlive);
   }
+  getMarsAge() {
+    return false;
+  }
 }
 
 export class Planet {

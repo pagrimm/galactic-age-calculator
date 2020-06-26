@@ -26,6 +26,10 @@ describe('Galactic Age Calculator', () => {
   test('should correctly return user age in Venus years', () => {
     expect(user.getVenusAge()).toEqual(58);
   });
+
+  test('should correctly return user age in Mars years', () => {
+    expect(user.getMarsAge()).toEqual(19);
+  });
 });
 
 //13,225
