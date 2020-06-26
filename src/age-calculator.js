@@ -4,15 +4,22 @@ export class User {
     this.birthday = new Date(year, month, day);
     this.lifeExpectancy = expectancy;
   }
-
   getDaysAlive() {
     let today = new Date();
     return (msToDays(today.getTime()) - msToDays(this.birthday.getTime()))
   }
-
   getMercuryAge() {
-    let orbitalPeriod = 88
-    return false;
+    let mercury = new Planet(88)
+    return mercury.getPlanetAge(this.getDaysAlive());
+  }
+}
+
+export class Planet {
+  constructor(orbitalPeriod) {
+    this.orbitalPeriod = orbitalPeriod;
+  }
+  getPlanetAge(earthDays) {
+    return Math.floor(earthDays / this.orbitalPeriod);
   }
 }
 
