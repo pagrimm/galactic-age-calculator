@@ -9,6 +9,9 @@ export class User {
     let today = new Date();
     return (msToDays(today.getTime()) - msToDays(this.birthday.getTime()))
   }
+  getDaysLeft() {
+    return false; 
+  }
   getMercuryAge() {
     let mercury = new Planet(88)
     return mercury.getPlanetAge(this.daysAlive);

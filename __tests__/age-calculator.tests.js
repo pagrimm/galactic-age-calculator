@@ -34,6 +34,10 @@ describe('Galactic Age Calculator', () => {
   test('should correctly return user age in Jupiter years', () => {
     expect(user.getJupiterAge()).toEqual(3);
   });
+
+  test('should correctly return days user has left to live based on life expectancy', () => {
+    expect(user.getDaysLeft()).toEqual(15263);
+  });
 });
 
 //13,225
