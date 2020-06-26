@@ -28,6 +28,9 @@ export class User {
     let jupiter = new Planet(4332)
     return jupiter.getPlanetAge(this.daysAlive);
   }
+  getPlanetYearsLeft() {
+    return false;
+  }
 }
 
 export class Planet {

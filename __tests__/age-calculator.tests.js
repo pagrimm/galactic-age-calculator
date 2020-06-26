@@ -15,7 +15,7 @@ describe('Galactic Age Calculator', () => {
     expect(user.lifeExpectancy).toEqual(78);
   });
 
-  test('should correctly calculate number of days user has been alive', () => {
+  test('should correctly return number of days user has been alive', () => {
     expect(user.getDaysAlive()).toEqual(13225);
   });
 
@@ -37,6 +37,10 @@ describe('Galactic Age Calculator', () => {
 
   test('should correctly return days user has left to live based on life expectancy', () => {
     expect(user.getDaysLeft()).toEqual(15263);
+  });
+
+  test('should correctly return years user has left to live on each planet', () => {
+    expect(user.getPlanetYearsLeft()).toEqual([173, 67, 22, 3]);
   });
 });
 
