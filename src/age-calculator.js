@@ -6,6 +6,11 @@ export class User {
   }
 
   getDaysAlive() {
-    return false;
+    let today = new Date();
+    return (msToDays(today.getTime()) - msToDays(this.birthday.getTime()))
   }
+}
+
+function msToDays(ms) {
+  return Math.floor(ms / 8.64e7)
 }
