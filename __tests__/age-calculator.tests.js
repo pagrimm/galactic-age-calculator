@@ -2,9 +2,10 @@ import { User } from './../src/age-calculator.js';
 
 describe('Galactic Age Calculator', () => {
   let user;
+  let today;
 
   beforeEach(() => {
-    let today = new Date(2020, 5, 26);
+    today = new Date(2020, 5, 26);
     user = new User("Peter", 1984, 3, 11, 78, today);
   });
 
@@ -42,6 +43,11 @@ describe('Galactic Age Calculator', () => {
 
   test('should correctly return years user has left to live on each planet', () => {
     expect(user.getPlanetYearsLeft()).toEqual([173, 67, 22, 3]);
+  });
+
+  test('should correctly return years user has lived over expectancy on each planet', () => {
+    let user2 = new User("Edgar", 1932, 7, 14, 78, today);
+    expect(user2.getPlanetYearsLeft()).toEqual([-41, -17, -6, -1]);
   });
 });
 

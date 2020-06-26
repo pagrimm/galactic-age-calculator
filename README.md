@@ -15,16 +15,8 @@ Returns user age in Venus years
 Returns user age in Mars years
 Returns user age in Jupiter years
 Calculates number of days user has left to live based on input life expectancy
-If user is under average life expectancy, returns how many years user has left to live in Mercury years
-If user is over average life expectancy, returns how many years user has lived past the life expectancy in Mercury years
-If user is under average life expectancy, returns how many years user has left to live in Venus years
-If user is over average life expectancy, returns how many years user has lived past the life expectancy in Venus years
-If user is under average life expectancy, returns how many years user has left to live in Mercury years
-If user is over average life expectancy, returns how many years user has lived past the life expectancy in Mercury years
-If user is under average life expectancy, returns how many years user has left to live in Mars years
-If user is over average life expectancy, returns how many years user has lived past the life expectancy in Mars years
-If user is under average life expectancy, returns how many years user has left to live in Jupiter years
-If user is over average life expectancy, returns how many years user has lived past the life expectancy in Jupiter years
+If user is under average life expectancy, returns how many years user has left to live in Planet years
+If user is over average life expectancy, returns how many years user has lived past the life expectancy in Planet years
 
 
 ## Setup/Installation Requirements
