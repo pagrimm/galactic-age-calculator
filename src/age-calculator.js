@@ -18,7 +18,8 @@ export class User {
     return venus.getPlanetAge(this.daysAlive);
   }
   getMarsAge() {
-    return false;
+    let mars = new Planet(687)
+    return mars.getPlanetAge(this.daysAlive);
   }
 }
 
