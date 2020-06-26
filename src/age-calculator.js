@@ -12,6 +12,9 @@ export class User {
     let mercury = new Planet(88)
     return mercury.getPlanetAge(this.getDaysAlive());
   }
+  getVenusAge() {
+    return false;
+  }
 }
 
 export class Planet {
