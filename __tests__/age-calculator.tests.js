@@ -49,4 +49,10 @@ describe('Galactic Age Calculator', () => {
     let user2 = new User("Edgar", 1932, 7, 14, 78, today);
     expect(user2.getPlanetYearsLeft()).toEqual([-41, -17, -6, -1]);
   });
+
+  test('should correctly return next birthday of user', () => {
+    expect(user.nextBirthday.getDate()).toEqual(11);
+    expect(user.nextBirthday.getFullYear()).toEqual(2021);
+    expect(user.nextBirthday.getMonth()).toEqual(3);
+  });
 });
