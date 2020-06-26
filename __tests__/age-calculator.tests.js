@@ -18,6 +18,10 @@ describe('Galactic Age Calculator', () => {
   test('should correctly calculate number of days user has been alive', () => {
     expect(user.getDaysAlive()).toEqual(13225);
   });
+
+  test('should correctly return user age in Mercury years', () => {
+    expect(user.getMercuryAge()).toEqual(150);
+  });
 });
 
 //13,225

@@ -9,6 +9,11 @@ export class User {
     let today = new Date();
     return (msToDays(today.getTime()) - msToDays(this.birthday.getTime()))
   }
+
+  getMercuryAge() {
+    let orbitalPeriod = 88
+    return false;
+  }
 }
 
 function msToDays(ms) {
