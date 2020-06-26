@@ -3,13 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/bootstrap.css" rel="stylesheet" type = "text/css">
-  <link href="css/styles.css" rel="stylesheet" type = "text/css">
-  <script src="js/jquery-3.5.1.js"></script>
-  <script src="js/scripts.js"></script>
-  <title>Document</title>
+  <title>Galactic Age Calculator</title>
 </head>
-<body>
-  
+<body class="container">
+  <header class="jumbotron">
+    <h1>Galactic Age Calculator</h1>
+  </header>
+  <section class="input card text-white bg-primary border-danger mb-3">
+    <div class="card-header text-danger">Calculator</div>
+    <div class="card-body">
+      <p class="card-text">Input your birthday:</p>
+      <form>
+        <input id="date-input" class="form-control" type="date">
+        <button id="form-submit" type="submit" class="btn btn-warning">Submit</button>
+      </form>
+    </div>
+  </section>
+  <section class="output card text-white bg-primary border-warning mb-3">
+    <div class="card-header text-warning">Output</div>
+    <div class="card-body">
+      <p class="card-text">Your results:</p>
+      <div id="output"></div>
+    </div>
+  </section>
 </body>
 </html>

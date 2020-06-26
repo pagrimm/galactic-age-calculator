@@ -51,7 +51,6 @@ describe('Galactic Age Calculator', () => {
   });
 });
 
-//13,225
 /* Creates a user object with user input name, birthday, life expectancy.
 Calculates the number of days user has lived
 Returns user age in Mercury years
