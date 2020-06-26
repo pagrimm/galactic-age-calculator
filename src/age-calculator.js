@@ -1,13 +1,12 @@
 export class User {
-  constructor(name, year, month, day, expectancy) {
+  constructor(name, year, month, day, expectancy, today) {
     this.name = name;
     this.birthday = new Date(year, month, day);
     this.lifeExpectancy = expectancy;
-    this.daysAlive = this.getDaysAlive();
+    this.daysAlive = this.getDaysAlive(today);
     this.daysLeft = this.getDaysLeft();
   }
-  getDaysAlive() {
-    let today = new Date();
+  getDaysAlive(today = new Date()) {
     return (msToDays(today.getTime()) - msToDays(this.birthday.getTime()))
   }
   getDaysLeft() {

@@ -4,7 +4,8 @@ describe('Galactic Age Calculator', () => {
   let user;
 
   beforeEach(() => {
-    user = new User("Peter", 1984, 3, 11, 78);
+    let today = new Date(2020, 5, 26);
+    user = new User("Peter", 1984, 3, 11, 78, today);
   });
 
   test('should correctly create a user object with name, birthday date object, life expectancy', () => {
@@ -16,7 +17,7 @@ describe('Galactic Age Calculator', () => {
   });
 
   test('should correctly return number of days user has been alive', () => {
-    expect(user.getDaysAlive()).toEqual(13225);
+    expect(user.daysAlive).toEqual(13225);
   });
 
   test('should correctly return user age in Mercury years', () => {
