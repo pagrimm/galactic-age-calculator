@@ -53,17 +53,9 @@ describe('Galactic Age Calculator', () => {
     expect(calculator2.getPlanetYearsLeft()).toEqual([-41, -17, -6, -1]);
   });
 
-  test('should correctly return last birthday of user if birthday in this year has passed', () => {
-    expect(calculator.user.lastBirthday.getDate()).toEqual(11);
-    expect(calculator.user.lastBirthday.getFullYear()).toEqual(2020);
-    expect(calculator.user.lastBirthday.getMonth()).toEqual(3);
-  });
-
-  test('should correctly return last birthday of user if birthday in this year has not passed', () => {
-    let user2 = new User("Steve", 1992, 10, 14, 78, today);
-    let calculator2 = new Calculator(user2);
-    expect(calculator2.user.lastBirthday.getDate()).toEqual(14);
-    expect(calculator2.user.lastBirthday.getFullYear()).toEqual(2019);
-    expect(calculator2.user.lastBirthday.getMonth()).toEqual(10);
+  test('should correctly return next mercury birthday for user', () => {
+    expect(calculator.getNextPlanetBirthday("mercury").getFullYear()).toEqual(2020);
+    expect(calculator.getNextPlanetBirthday("mercury").getMonth()).toEqual(7);
+    expect(calculator.getNextPlanetBirthday("mercury").getDate()).toEqual(28);
   });
 });

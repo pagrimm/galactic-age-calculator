@@ -8,7 +8,6 @@ export class Calculator {
   addUserCalcs(user, today) {
     user.daysAlive = this.getDaysAlive(today);
     user.daysLeft = this.getDaysLeft(today);
-    user.lastBirthday = this.getLastBirthday(today);
   }
 
   getDaysAlive(today) {
@@ -17,18 +16,6 @@ export class Calculator {
 
   getDaysLeft(today) {
     return Math.floor(this.user.lifeExpectancy * 365.2422) - this.getDaysAlive(today);
-  }
-
-  getLastBirthday(today) {
-    let thisYearBirthday = new Date(today.getFullYear(), this.user.birthday.getMonth(), this.user.birthday.getDate());
-    let lastBirthday;
-    if (thisYearBirthday.getTime() < today.getTime()) {
-      lastBirthday = thisYearBirthday;
-    } else {
-      lastBirthday = thisYearBirthday;
-      lastBirthday.setFullYear(lastBirthday.getFullYear() - 1);
-    }
-    return lastBirthday;
   }
 
   msToDays(ms) {
@@ -57,6 +44,10 @@ export class Calculator {
       this.getPlanetAge("mars", this.user.daysLeft),
       this.getPlanetAge("jupiter", this.user.daysLeft));
     return yearsArray;
+  }
+
+  getNextPlanetBirthday (planet) {
+    return new Date();
   }
 }
 
