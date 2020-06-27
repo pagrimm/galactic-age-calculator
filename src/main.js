@@ -10,9 +10,9 @@ $(document).ready(function () {
     clearResults();
     let input = getInput();
     let user = new User(input[0], input[1], (input[2] - 1), input[3], input[4]);
+    let calculator = new Calculator(user);
     clearInput;
-    console.log(user.getDaysAlive());
-    displayResults(user);
+    displayResults(calculator);
   });
 });
 
@@ -29,14 +29,14 @@ function getInput() {
   return outputArray;
 }
 
-function displayResults(user) {
+function displayResults(calculator) {
   $("section.output").show();
-  $("#name-output").text(`Hello ${user.name},`);
-  $("#output").append(`<div>You are ${user.getMercuryAge()} Mercury years old.</div>`);
-  $("#output").append(`<div>You are ${user.getVenusAge()} Venus years old.</div>`);
-  $("#output").append(`<div>You are ${user.getMarsAge()} Mars years old.</div>`);
-  $("#output").append(`<div>You are ${user.getJupiterAge()} Jupiter years old.</div>`);
-  let planetYearsLeft = user.getPlanetYearsLeft();
+  $("#name-output").text(`Hello ${calculator.user.name},`);
+  $("#output").append(`<div>You are ${calculator.getPlanetAge("mercury")} Mercury years old.</div>`);
+  $("#output").append(`<div>You are ${calculator.getPlanetAge("venus")} Venus years old.</div>`);
+  $("#output").append(`<div>You are ${calculator.getPlanetAge("mars")} Mars years old.</div>`);
+  $("#output").append(`<div>You are ${calculator.getPlanetAge("jupiter")} Jupiter years old.</div>`);
+  let planetYearsLeft = calculator.getPlanetYearsLeft();
   if (user.daysLeft >= 0) {
     $("#output").append(`<div>You have an expected ${planetYearsLeft[0]} Mercury years left.</div>`);
     $("#output").append(`<div>You have an expected ${planetYearsLeft[1]} Venus years left.</div>`);
