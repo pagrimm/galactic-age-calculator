@@ -20,7 +20,7 @@ export class Calculator {
   }
 
   getLastBirthday(today) {
-    let thisYearBirthday = new Date(today.getFullYear(), this.user.birthday.getMonth(), this.user.birthday.getDate())
+    let thisYearBirthday = new Date(today.getFullYear(), this.user.birthday.getMonth(), this.user.birthday.getDate());
     let lastBirthday;
     if (thisYearBirthday.getTime() < today.getTime()) {
       lastBirthday = thisYearBirthday;
@@ -45,7 +45,7 @@ export class Calculator {
   }
 
   getPlanetAge(planet, days = this.user.daysAlive) {
-    let age = Math.floor(days / this.solarSystem[planet].orbitalPeriod)
+    let age = Math.floor(days / this.solarSystem[planet].orbitalPeriod);
     return age;
   }
 
@@ -61,7 +61,7 @@ export class Calculator {
 }
 
 export class User {
-  constructor(name, year, month, day, expectancy, today) {
+  constructor(name, year, month, day, expectancy) {
     this.name = name;
     this.birthday = new Date(year, month, day);
     this.lifeExpectancy = expectancy;

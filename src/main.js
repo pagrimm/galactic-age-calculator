@@ -3,6 +3,7 @@ import 'bootstrap';
 import './bootstrap.min.css';
 import './styles.css';
 import { User } from './../src/age-calculator.js';
+import { Calculator } from './../src/age-calculator.js';
 
 $(document).ready(function () {
   $("form").submit(function (event) {
@@ -37,7 +38,7 @@ function displayResults(calculator) {
   $("#output").append(`<div>You are ${calculator.getPlanetAge("mars")} Mars years old.</div>`);
   $("#output").append(`<div>You are ${calculator.getPlanetAge("jupiter")} Jupiter years old.</div>`);
   let planetYearsLeft = calculator.getPlanetYearsLeft();
-  if (user.daysLeft >= 0) {
+  if (calculator.user.daysLeft >= 0) {
     $("#output").append(`<div>You have an expected ${planetYearsLeft[0]} Mercury years left.</div>`);
     $("#output").append(`<div>You have an expected ${planetYearsLeft[1]} Venus years left.</div>`);
     $("#output").append(`<div>You have an expected ${planetYearsLeft[2]} Mars years left.</div>`);
