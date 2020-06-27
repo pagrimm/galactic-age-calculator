@@ -47,7 +47,9 @@ export class Calculator {
   }
 
   getNextPlanetBirthday (planet) {
-    return new Date();
+    let outputDate = new Date(this.user.birthday.getFullYear(), this.user.birthday.getMonth(), this.user.birthday.getDate())
+    outputDate.setDate(outputDate.getDate() + (this.solarSystem[planet].orbitalPeriod * (this.getPlanetAge(planet) + 1)));
+    return outputDate;
   }
 }
 
