@@ -49,6 +49,10 @@ function displayResults(calculator) {
     $("#output").append(`<div>You have outlived your life expectancy by ${-planetYearsLeft[2]} Mars years.</div>`);
     $("#output").append(`<div>You have outlived your life expectancy by ${-planetYearsLeft[3]} Jupiter years.</div>`);
   }
+  $("#output").append(`<div>Your next birthday on Mercury is: ${calculator.getNextPlanetBirthday("mercury")}</div>`);
+  $("#output").append(`<div>Your next birthday on Venus is: ${calculator.getNextPlanetBirthday("venus")}</div>`);
+  $("#output").append(`<div>Your next birthday on Mars is: ${calculator.getNextPlanetBirthday("mars")}</div>`);
+  $("#output").append(`<div>Your next birthday on Jupiter is: ${calculator.getNextPlanetBirthday("jupiter")}</div>`);
 }
 
 function clearResults() {
