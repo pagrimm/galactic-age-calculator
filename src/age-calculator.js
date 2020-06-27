@@ -47,7 +47,7 @@ export class Calculator {
   }
 
   getNextPlanetBirthday (planet) {
-    let outputDate = new Date(this.user.birthday.getFullYear(), this.user.birthday.getMonth(), this.user.birthday.getDate())
+    let outputDate = new Date(this.user.birthday.getFullYear(), this.user.birthday.getMonth(), this.user.birthday.getDate());
     outputDate.setDate(outputDate.getDate() + (this.solarSystem[planet].orbitalPeriod * (this.getPlanetAge(planet) + 1)));
     return outputDate;
   }
@@ -61,14 +61,14 @@ export class User {
   }
 }
 
-class SolarSystem {
+export class SolarSystem {
   constructor() {}
   addPlanet(planet) {
     this[planet.name] = planet;
   }
 }
 
-class Planet {
+export class Planet {
   constructor(name, orbitalPeriod) {
     this.name = name;
     this.orbitalPeriod = orbitalPeriod;

@@ -1,4 +1,4 @@
-import { User, Calculator } from './../src/age-calculator.js';
+import { User, Calculator, SolarSystem, Planet } from './../src/age-calculator.js';
 
 describe('Galactic Age Calculator', () => {
   let user;
@@ -12,11 +12,34 @@ describe('Galactic Age Calculator', () => {
   });
 
   test('should correctly create a user object with name, birthday date object, life expectancy', () => {
-    expect(calculator.user.name).toEqual("Peter");
-    expect(calculator.user.birthday.getDate()).toEqual(11);
-    expect(calculator.user.birthday.getFullYear()).toEqual(1984);
-    expect(calculator.user.birthday.getMonth()).toEqual(3);
-    expect(calculator.user.lifeExpectancy).toEqual(78);
+    let testUser = new User("John", 1972, 7, 17, 78);
+    expect(testUser.name).toEqual("John");
+    expect(testUser.birthday.getDate()).toEqual(17);
+    expect(testUser.birthday.getFullYear()).toEqual(1972);
+    expect(testUser.birthday.getMonth()).toEqual(7);
+    expect(testUser.lifeExpectancy).toEqual(78);
+  });
+
+  test('should correctly create a planet object with orbital period', () => {
+    let testPlanet = new Planet("saturn", 11000);
+    expect(testPlanet.orbitalPeriod).toEqual(11000);
+  });
+
+  test('should correctly create a solar system object with planet objects', () => {
+    let testSolarSystem = new SolarSystem();
+    let testPlanet = new Planet("saturn", 11000);
+    let testPlanet2 = new Planet("neptune", 60200);
+    testSolarSystem.addPlanet(testPlanet);
+    testSolarSystem.addPlanet(testPlanet2);
+    expect(testSolarSystem.saturn.orbitalPeriod).toEqual(11000);
+    expect(testSolarSystem.neptune.orbitalPeriod).toEqual(60200);
+  });
+
+  test('should correctly create a calculator object with user, solar system, and planets', () => {
+    let testUser = new User("John", 1972, 7, 17, 78);
+    let testCalculator = new Calculator (testUser);
+    expect(testCalculator.user.name).toEqual("John");
+    expect(testCalculator.solarSystem.mars.orbitalPeriod).toEqual(687);
   });
 
   test('should correctly return number of days user has been alive', () => {
