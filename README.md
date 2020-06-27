@@ -4,7 +4,7 @@
 
 ## Description
 
-Week 5 project for Epicodus. A program that calculate's a user's age in various planetary years. Designed to showcase my learning and skill with concepts including test-driven development with Jest, red green refactor workflow, npm and Webpack, and ES6 features like classes and template literals.
+Week 5 project for Epicodus. A program that calculates a user's age in various planetary years. Designed to showcase my learning and skill with concepts including test-driven development with Jest, red green refactor workflow, npm and Webpack, and ES6 features like classes and template literals.
 
 ## Specifications
 | Behavior                                                                                                               | Input                           | Output                          |
