@@ -1,6 +1,6 @@
 # Galactic Age Calculator
 **Weekly Project for Epicodus**  
-**06.26.2020 Peter Grimm**
+**Peter Grimm 06.26.2020**
 
 ## Description
 
@@ -26,6 +26,7 @@ Week 5 project for Epicodus. A program that calculate's a user's age in various 
 * Navigate to the `galactic-age-calculator` folder
 * Run `npm install` to install dependencies
 * Run `npm run start` to spin up a web server to view the site
+* Also available on GitHub pages here: https://pagrimm.github.io/galactic-age-calculator/
 
 ## Technologies Used
 
