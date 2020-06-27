@@ -1,28 +1,26 @@
-export class User {
-  constructor(name, year, month, day, expectancy, today) {
-    this.name = name;
-    this.birthday = new Date(year, month, day);
-    this.lifeExpectancy = expectancy;
-    this.daysAlive = this.getDaysAlive(today);
-    this.daysLeft = this.getDaysLeft();
-    this.lastBirthday = this.getLastBirthday(today);
+export class Calculator {
+  constructor (user, today) {
+    this.user = user;
+    this.addUserCalcs(user, today);
+    this.solarSystem = this.addSolarSystem();
   }
+
+  addUserCalcs(user, today) {
+    user.daysAlive = this.getDaysAlive(today);
+    user.daysLeft = this.getDaysLeft(today);
+    user.lastBirthday = this.getLastBirthday(today);
+  }
+
   getDaysAlive(today = new Date()) {
-    return (msToDays(today.getTime()) - msToDays(this.birthday.getTime()));
+    return (this.msToDays(today.getTime()) - this.msToDays(this.user.birthday.getTime()));
   }
-  getDaysLeft() {
-    return Math.floor(this.lifeExpectancy * 365.2422) - this.daysAlive;
+
+  getDaysLeft(today = new Date()) {
+    return Math.floor(this.user.lifeExpectancy * 365.2422) - this.getDaysAlive(today);
   }
-  getPlanetYearsLeft() {
-    let yearsArray = [];
-    yearsArray.push(this.getMercuryAge(this.daysLeft));
-    yearsArray.push(this.getVenusAge(this.daysLeft));
-    yearsArray.push(this.getMarsAge(this.daysLeft));
-    yearsArray.push(this.getJupiterAge(this.daysLeft));
-    return yearsArray;
-  }
+
   getLastBirthday(today = new Date()) {
-    let thisYearBirthday = new Date(today.getFullYear(), this.birthday.getMonth(), this.birthday.getDate())
+    let thisYearBirthday = new Date(today.getFullYear(), this.user.birthday.getMonth(), this.user.birthday.getDate())
     let lastBirthday;
     if (thisYearBirthday.getTime() < today.getTime()) {
       lastBirthday = thisYearBirthday;
@@ -32,33 +30,53 @@ export class User {
     }
     return lastBirthday;
   }
-  getMercuryAge(days = this.daysAlive) {
-    let mercury = new Planet(88);
-    return mercury.getPlanetAge(days);
+
+  msToDays(ms) {
+    return Math.floor(ms / (1000 * 60 * 60 * 24));
   }
-  getVenusAge(days = this.daysAlive) {
-    let venus = new Planet(225);
-    return venus.getPlanetAge(days);
+
+  addSolarSystem() {
+    let solarSystem = new SolarSystem();
+    solarSystem.addPlanet(new Planet("mercury", 88));
+    solarSystem.addPlanet(new Planet("venus", 225));
+    solarSystem.addPlanet(new Planet("mars", 687));
+    solarSystem.addPlanet(new Planet("jupiter", 4332));
+    return solarSystem;
   }
-  getMarsAge(days = this.daysAlive) {
-    let mars = new Planet(687);
-    return mars.getPlanetAge(days);
+
+  getPlanetAge(planet, days = this.user.daysAlive) {
+    let age = Math.floor(days / this.solarSystem[planet].orbitalPeriod)
+    return age;
   }
-  getJupiterAge(days = this.daysAlive) {
-    let jupiter = new Planet(4332);
-    return jupiter.getPlanetAge(days);
+
+  getPlanetYearsLeft() {
+    let yearsArray = [];
+    yearsArray.push(this.getPlanetAge("mercury", this.user.daysLeft));
+    yearsArray.push(this.getPlanetAge("venus", this.user.daysLeft));
+    yearsArray.push(this.getPlanetAge("mars", this.user.daysLeft));
+    yearsArray.push(this.getPlanetAge("jupiter", this.user.daysLeft));
+    return yearsArray;
   }
 }
 
-export class Planet {
-  constructor(orbitalPeriod) {
+export class User {
+  constructor(name, year, month, day, expectancy, today) {
+    this.name = name;
+    this.birthday = new Date(year, month, day);
+    this.lifeExpectancy = expectancy;
+  }
+}
+
+class SolarSystem {
+  constructor() {}
+  addPlanet(planet) {
+    this[planet.name] = planet;
+  }
+}
+
+class Planet {
+  constructor(name, orbitalPeriod) {
+    this.name = name;
     this.orbitalPeriod = orbitalPeriod;
   }
-  getPlanetAge(earthDays) {
-    return Math.floor(earthDays / this.orbitalPeriod);
-  }
-}
-
-function msToDays(ms) {
-  return Math.floor(ms / (1000 * 60 * 60 * 24));
 }
